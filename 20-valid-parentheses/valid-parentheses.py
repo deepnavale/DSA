@@ -1,10 +1,5 @@
 class Solution(object):
-    def isClosed(self,c):
-        return c=='}' or c==']' or c==')'
-    
-    def isOpp(self,curr,prev):
-        return (curr==')' and prev=='(') or (curr==']' and prev=='[') or (curr=='}' and prev=='{')
-
+   
     def isValid(self, s):
         """
         :type s: str
@@ -12,14 +7,14 @@ class Solution(object):
         """
         stack = []
         for c in s:
-            if self.isClosed(c):
-                if len(stack) == 0:
-                    return False
-                elif self.isOpp(c,stack[-1]):
+            if c in [']',')','}']:
+                if len(stack)==0 : return False
+                t=stack[-1]
+                if t=='('and c==')' or  t=='{'and c=='}' or  t=='['and c==']' :
                     stack.pop()
-                else:
-                    return False
-            else:
-                stack.append(c)
+                else: return False
+            else: stack.append(c)
+
+       
         
         return len(stack) == 0
