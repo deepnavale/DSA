@@ -33,11 +33,11 @@ class MinStack(object):
         """
         :rtype: int
         """
-        minVal=self.stack[0]
-        for i in self.stack:
-            minVal = min(minVal,i )
+        # minVal=self.stack[0]
+        # for i in self.stack:
+        #     minVal = min(minVal,i )
 
-        return minVal
+        return min(self.stack)
 
         
 
