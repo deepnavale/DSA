@@ -12,12 +12,20 @@ class Solution(object):
 
         for c in s:
             if c in pairs:
-                if not stack: return False
-                if stack[-1]==pairs[c]:
-                    stack.pop()
-                else: return False
+                if not stack or stack[-1]!=pairs[c]:
+                    return False
+                stack.pop()
             else: stack.append(c)
-        return len(stack)==0
+        return not stack
+
+        # for c in s:
+        #     if c in pairs:
+        #         if not stack: return False
+        #         if stack[-1]==pairs[c]:
+        #             stack.pop()
+        #         else: return False
+        #     else: stack.append(c)
+        # return len(stack)==0
                 
         # for c in s:
         #     if c in [']',')','}']:
