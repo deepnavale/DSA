@@ -6,18 +6,19 @@ class Solution(object):
         """
         dp = [-1]*46
         def solve(n):
-            if dp[n]==-1:
-                if n<0 : return 0
-                if n==0 : return 1
+            if n==0: return 1
+            if n<0: return 0
+            if dp[n]!=-1: return dp[n]
 
+            else:
                 onestep = solve(n-1)
                 twostep = solve(n-2)
-            else:
-                return dp[n]
-            
-            dp[n] = onestep + twostep
+                dp[n] = onestep + twostep
             return dp[n]
+
+
         
+
         
              
         return solve(n)
