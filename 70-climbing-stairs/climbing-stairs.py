@@ -10,10 +10,10 @@ class Solution(object):
             if n<0: return 0
             if dp[n]!=-1: return dp[n]
 
-            else:
-                onestep = solve(n-1)
-                twostep = solve(n-2)
-                dp[n] = onestep + twostep
+            onestep = solve(n-1)
+            twostep = solve(n-2)
+            dp[n] = onestep + twostep
+               
             return dp[n]
 
 
