@@ -4,10 +4,9 @@ class Solution(object):
         :type cost: List[int]
         :rtype: int
         """
-        n=len(cost)
-        if  n<=2: return min(cost[0],cost[1])
-
-        for i in range(2,n):
-            cost[i]= cost[i] + min(cost[i-1],cost[i-2])
-        
-        return min(cost[n-1],cost[n-2])
+        n = len(cost)
+        a, b = 0, 0  # cost to reach top from "beyond" last step
+        for i in range(n-1, -1, -1):
+            c = cost[i] + min(a, b)
+            a, b = b, c
+        return min(a, b)
