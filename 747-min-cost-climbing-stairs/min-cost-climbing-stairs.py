@@ -6,7 +6,7 @@ class Solution(object):
         """
         n = len(cost)
         a, b = 0, 0  # cost to reach top from "beyond" last step
-        for i in range(n-1, -1, -1):
+        for i in range(n):
             c = cost[i] + min(a, b)
             a, b = b, c
         return min(a, b)
