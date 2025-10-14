@@ -12,11 +12,9 @@ class Solution(object):
         cnt=0
         while i<len(g) and j<len(s):
             if s[j]>=g[i]:
-                cnt+=1
                 i+=1
-                j+=1
-            else:
-                j+=1
-        return cnt
+            j+=1
+        
+        return i
                
 
