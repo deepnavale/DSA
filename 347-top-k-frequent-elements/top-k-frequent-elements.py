@@ -11,9 +11,13 @@ class Solution(object):
         sorted_d = sorted(d.items(),key=lambda v:v[1],reverse=True)
         lst=[]
         cnt=0
-        for freq in sorted_d :
+        # for val in sorted_d :
+        #     if cnt==k: break
+        #     lst.append(freq[0])
+        #     cnt+=1\
+        for ele, freq in sorted_d:
             if cnt==k: break
-            lst.append(freq[0])
+            lst.append(ele)
             cnt+=1
         return lst
 
