@@ -6,8 +6,20 @@ class Solution(object):
         """
         while(len(stones)>1):
             stones.sort()
-            lst = stones.pop()
-            stones[-1]= abs(stones[-1]-lst)
-            # sec_lst = stones.pop()
-        ans = stones[0] if stones[0]>0 else  0
-        return ans
+            x=stones.pop()
+            y=stones.pop()
+            if x!=y:
+                stones.append(x-y)
+        return stones[0] if stones else 0
+
+
+
+
+
+
+        #     stones.sort()
+        #     lst = stones.pop()
+        #     stones[-1]= abs(stones[-1]-lst)
+        #     # sec_lst = stones.pop()
+        # ans = stones[0] if stones[0]>0 else  0
+        # return ans
