@@ -7,6 +7,6 @@ class Solution(object):
         ans = [0]*2*len(nums)
         n = len(nums)
         ans[:n]= nums
-        ans[n:]= nums
+        ans[n:2*n]= nums
         return ans
         
