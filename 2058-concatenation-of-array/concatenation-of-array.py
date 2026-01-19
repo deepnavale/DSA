@@ -10,8 +10,10 @@ class Solution(object):
         # ans[n:2*n]= nums
         # return ans
  
-        ans = [x for x in nums]
-        for x in nums:
-            ans.append(x)
-        return ans
+        # ans = [x for x in nums]
+        # for x in nums:
+        #     ans.append(x)
+        # return ans
+
+        return nums + nums
         
