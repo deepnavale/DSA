@@ -12,7 +12,9 @@ class Solution:
         #     if cntinc==0:
         #         return False
         # return True
-
-        return sorted(s)==sorted(t)
-        
+        a = list(s)
+        b = list(t)
+        a.sort()
+        b.sort()
+        return a==b
                 
