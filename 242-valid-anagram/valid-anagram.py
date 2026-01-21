@@ -25,15 +25,23 @@ class Solution:
             sfreq[x] = sfreq.get(x,0) + 1
         for x in t:
             tfreq[x] = tfreq.get(x,0) + 1
+        
+        for x in sfreq:
+            if x not in tfreq:
+                return False
+            elif sfreq[x]!=tfreq[x]:
+                return False
+        return True
+
             
-        for key, val in sfreq.items():
+        # for key, val in sfreq.items():
             # if key in tfreq:
             #     if sfreq[key]!=tfreq[key]:
             #         return False
             # else:
             #     return False
 
-            if sfreq[key] != tfreq.get(key,0):
-                return False
-        return True
+            # if sfreq[key] != tfreq.get(key,0):
+            #     return False
+        # return True
                 
