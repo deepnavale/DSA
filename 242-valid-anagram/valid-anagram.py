@@ -27,10 +27,13 @@ class Solution:
             tfreq[x] = tfreq.get(x,0) + 1
             
         for key, val in sfreq.items():
-            if key in tfreq:
-                if sfreq[key]!=tfreq[key]:
-                    return False
-            else:
+            # if key in tfreq:
+            #     if sfreq[key]!=tfreq[key]:
+            #         return False
+            # else:
+            #     return False
+
+            if sfreq[key] != tfreq.get(key,0):
                 return False
         return True
                 
