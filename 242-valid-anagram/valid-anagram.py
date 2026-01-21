@@ -19,21 +19,21 @@ class Solution:
         # b.sort()
         # return a==b
 
-        sfreq = {}
-        tfreq = {}
-        for x in s:
-            sfreq[x] = sfreq.get(x,0) + 1
-        for x in t:
-            tfreq[x] = tfreq.get(x,0) + 1
+        # sfreq = {}
+        # tfreq = {}
+        # for x in s:
+        #     sfreq[x] = sfreq.get(x,0) + 1
+        # for x in t:
+        #     tfreq[x] = tfreq.get(x,0) + 1
         
-        for x in list(sfreq):
-            if x not in tfreq:
-                return False
-            else:
-                sfreq[x] -= tfreq[x]
-                if sfreq[x]==0:
-                    del sfreq[x]
-        return not sfreq
+        # for x in list(sfreq):
+        #     if x not in tfreq:
+        #         return False
+        #     else:
+        #         sfreq[x] -= tfreq[x]
+        #         if sfreq[x]==0:
+        #             del sfreq[x]
+        # return not sfreq
         
         # for x in sfreq:
         #     if x not in tfreq:
@@ -53,4 +53,17 @@ class Solution:
             # if sfreq[key] != tfreq.get(key,0):
             #     return False
         # return True
+
+
+        freq = {}
+        for x in s:
+            freq[x] = freq.get(x,0)+1
+        for x in t:
+            if x not in freq:
+                return False
+            freq[x] -= 1
+            if freq[x] ==0:
+                del freq[x]
+        return not freq
+            
                 
