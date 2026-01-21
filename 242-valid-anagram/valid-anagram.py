@@ -12,9 +12,25 @@ class Solution:
         #     if cntinc==0:
         #         return False
         # return True
-        a = list(s)
-        b = list(t)
-        a.sort()
-        b.sort()
-        return a==b
+
+        # a = list(s)
+        # b = list(t)
+        # a.sort()
+        # b.sort()
+        # return a==b
+
+        sfreq = {}
+        tfreq = {}
+        for x in s:
+            sfreq[x] = sfreq.get(x,0) + 1
+        for x in t:
+            tfreq[x] = tfreq.get(x,0) + 1
+            
+        for key, val in sfreq.items():
+            if key in tfreq:
+                if sfreq[key]!=tfreq[key]:
+                    return False
+            else:
+                return False
+        return True
                 
