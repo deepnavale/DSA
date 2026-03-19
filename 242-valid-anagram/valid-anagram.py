@@ -7,7 +7,7 @@ class Solution:
         for char in s:
             sdict[char] = sdict.get(char,0) + 1
         for char in t:
-            if sdict.get(char,0) == 0:
+            if char not in sdict or sdict[char]==0:
                 return False
             sdict[char] -= 1
         
