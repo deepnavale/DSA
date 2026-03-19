@@ -7,12 +7,8 @@ class Solution:
         for char in s:
             sdict[char] = sdict.get(char,0) + 1
         for char in t:
-            tdict[char] = tdict.get(char,0) +1
-        
-        for k,v in sdict.items():
-            if k not in tdict:
+            if sdict.get(char,0) == 0:
                 return False
-            if tdict[k] != v:
-                return False
+            sdict[char] -= 1
         
         return True
